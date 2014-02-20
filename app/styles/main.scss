@@ -65,19 +65,24 @@ body {
             height: 340px;//stay the same
             background: red;
         }
-
-
     }
 
     .main {
         background: blue;
         height: 500px;
+
         .message-list {
             height: 500px; //stay the same
             background: lime;
         }
 
+        
+        .name {
+            outline: 1px solid white;
+            height: 60px;
+        }
     }
+}
 
     .input-section {
         background: pink;
@@ -85,8 +90,54 @@ body {
             height: 60px; //stay the same
             background: grey;
         }
+    }  
+
+
+.bubble {
+    position: relative;
+    width: 415px;
+    height: 90px;
+    padding: 0px;
+    background: #BBFFFF;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    border: #7E7F7F solid 1px;
+    
+    :after {
+        content: '';
+        position: absolute;
+        border-style: solid;
+        border-width: 15px 15px 15px 0;
+        border-color: transparent #BBFFFF;
+        display: block;
+        width: 0;
+        z-index: 1;
+        left: -15px;
+        top: 47px;
     }
     
+    :before {
+        content: '';
+        position: absolute;
+        border-style: solid;
+        border-width: 15px 15px 15px 0;
+        border-color: transparent #7E7F7F;
+        display: block;
+        width: 0;
+        z-index: 0;
+        left: -16px;
+        top: 47px;
+    }
+
+    .message-text{
+        font-size: 18px;
+    }
+
+    .date {
+        font-size: 12px;
+        text-align: right;  
+    }
 }
 
 

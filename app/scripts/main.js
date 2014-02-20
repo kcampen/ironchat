@@ -39,5 +39,14 @@ $('.send-msg-btn').click(function(){
 
 });
 
+messages.fetch({
+	success: function(){
+		messages.comparator()
+		messages.each(function(){
+			new ListView({model: message});
+		})
+	}
+})
+
 	
 
