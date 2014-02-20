@@ -18,6 +18,7 @@ console.log('This is the messageModel: ', messageModel);
 
 messageModel = messages.add(messageModel);
 console.log(messageModel);
+
 // messageModel.save();
 
 
@@ -39,3 +40,4 @@ $('.send-msg-btn').click(function(){
 });
 
 	
+
