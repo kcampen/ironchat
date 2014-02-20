@@ -7,6 +7,9 @@ var messageTest = {
   messageText: 'this is our first message. the Dream team wins!',
 }
 
+var currentUser = {
+	username: 'IronYard Student'
+}
 
 var messageModel = new Message(messageTest);
 
@@ -15,5 +18,26 @@ console.log('This is the messageModel: ', messageModel);
 
 messageModel = messages.add(messageModel);
 console.log(messageModel);
-messageModel.save();
+
+// messageModel.save();
+
+
+$('.send-msg-btn').click(function(){
+
+	if (!($('.msg-input').val() === '')){  
+
+		var msg = new Message ({
+
+			messageText: $('.msg-input').val(),
+			username: currentUser.username
+		})
+
+		var freshMessage = messages.add(msg);
+
+		freshMessage.save()
+	}
+
+});
+
+	
 
