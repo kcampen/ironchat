@@ -2,6 +2,7 @@ var ListView = Backbone.View.extend({
 
 	className: 'new-message',
 
+	newTemplate: _.template($('#main-template').text()),
 
 	initialize: function(){
 
@@ -13,8 +14,10 @@ var ListView = Backbone.View.extend({
 
 	render: function(){
 
+		var renderedTemplate = this.newTemplate(this.model.attributes);
 
 
+		this.$el.html(renderedTemplate);
 		
 
 	}
