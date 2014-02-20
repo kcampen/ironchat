@@ -21,6 +21,14 @@ console.log(messageModel);
 
 // messageModel.save();
 
+$('.msg-input').keyup(function(event){
+    if(event.keyCode == 13){
+        $('.send-msg-btn').click();
+    }
+});
+
+
+
 
 $('.send-msg-btn').click(function(){
 
@@ -35,6 +43,8 @@ $('.send-msg-btn').click(function(){
 		var freshMessage = messages.add(msg);
 
 		freshMessage.save()
+
+		$('.msg-input').val('')
 	}
 
 });
