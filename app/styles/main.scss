@@ -56,9 +56,11 @@ body {
     text-align: center;
     border-bottom: 1px solid #e5e5e5;
 
+
     .sidebar {
         height: 500px; //stay the same
         background: rgb(90, 97, 95);
+        border-top: 8px solid rgb(90, 97, 95);
       
 
         .current-user {
@@ -90,10 +92,11 @@ body {
     .main {
         height: 500px;
         background: rgb(90, 97, 95);
+        border-top: 8px solid rgb(90, 97, 95);
 
         .message-list {
             height: 500px; //stay the same
-            background: rgb(247, 247, 247);
+            background: #F7F7FA;
             overflow-y: scroll; 
             overflow-x: hidden; 
         }
@@ -107,6 +110,7 @@ body {
 
     .input-section {
         background: rgb(90, 97, 95);
+        border-bottom: 8px solid rgb(90, 97, 95);
         .input-area {
             height: 60px; //stay the same
             background: rgb(72, 79, 78);
