@@ -7,7 +7,11 @@
     "jquery": "~1.10.2",
     "underscore": "~1.6.0",
     "backbone": "~1.1.1",
+<<<<<<< HEAD
     "moment": "~2.5.1"
+=======
+    "momentjs": "~2.5.1"
+>>>>>>> 5765114be90f327f344a6492c67c1e6176262659
   },
   "devDependencies": {}
 }
