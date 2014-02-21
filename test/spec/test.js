@@ -1,13 +1,22 @@
 /* global describe, it */
 
 (function () {
-    'use strict';
+   'use strict';
 
-    describe('Give it some context', function () {
-        describe('maybe a bit more context here', function () {
-            it('should run here few assertions', function () {
+   describe('iron chat app', function () {
+      describe('', function () {
+         it('should have an instance of the backbone collection MessagesCollection', function () {
+         	expect(MessagesCollection !== undefined || null) .to.equal(true)
+         });
 
-            });
-        });
-    });
+         it('should have an instance of MessagesCollection messages', function () {
+         	expect( messages !== undefined || null) .to.equal(true)
+         });
+
+         it('should have an instance of the object messageText', function () {
+         	expect( messageText !== undefined || null) .to.equal(true)
+         });
+
+      });
+   });
 })();
