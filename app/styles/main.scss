@@ -74,6 +74,8 @@ body {
         .message-list {
             height: 500px; //stay the same
             background: lime;
+            overflow-y: scroll; 
+            overflow-x: hidden; 
         }
 
         
