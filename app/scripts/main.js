@@ -2,64 +2,67 @@ console.log('You can do it!');
 
 var messages = new MessagesCollection();
 
-var messageTest = {
-  username: 'Todd',
-  messageText: 'this is our first message. the Dream team wins!',
-}
-
 var currentUser = {
-	username: 'IronYard Student'
+    username: 'IronYard Student'
 }
 
-var messageModel = new Message(messageTest);
-
-console.log('this is the messageTest: ', messageTest);
-console.log('This is the messageModel: ', messageModel);
-
-messageModel = messages.add(messageModel);
-console.log(messageModel);
-
-// messageModel.save();
-
-$('.msg-input').keyup(function(event){
-    if(event.keyCode == 13){
+$('.msg-input').keyup(function(event) {
+    if (event.keyCode == 13) {
         $('.send-msg-btn').click();
     }
 });
 
+$('.send-msg-btn').click(function() {
 
+    if (!($('.msg-input').val() === '')) {
 
+        var msg = new Message({
 
-$('.send-msg-btn').click(function(){
+            messageText: $('.msg-input').val(),
+            username: currentUser.username,
+            messageDate: _.now() //had to move this out of the "defaults:" to here
+        })
 
-	if (!($('.msg-input').val() === '')){  
+        var freshMessage = messages.add(msg);
 
-		var msg = new Message ({
+        freshMessage.save()
 
-			messageText: $('.msg-input').val(),
-			username: currentUser.username
-		})
-
-		var freshMessage = messages.add(msg);
-
-		freshMessage.save()
-
-		$('.msg-input').val('')
-	}
+        $('.msg-input').val('')
+    }
 
 });
 
+//backbone docs said to use this reset:true
+//upon initial page load
 messages.fetch({
-	success: function(){
-		messages.each(function(message){
-			new ListView({model: message});
-		})
-	},
 
-      error: function() {
-        console.log('fetch failed!');
-      }
-})
+    reset: true,
 
-	
+    success: function() {
+        messages.each(function(message){
+         new ListView({model: message});
+        })
+    },
 
+    error: function() {
+      console.log('problem with initial page load fetch');
+    }
+
+});
+
+
+setInterval(getNewMessages, 1000);
+
+function getNewMessages() {
+    messages.fetch({
+        success: function() {
+            // messages.each(function(message){
+            //  new ListView({model: message});
+            // })
+        },
+
+        error: function() {
+            console.log('fetch failed!');
+        }
+    })
+}
