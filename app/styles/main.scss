@@ -61,11 +61,14 @@ body {
         height: 500px; //stay the same
         background: rgb(90, 97, 95);
         border-top: 8px solid rgb(90, 97, 95);
+        border-top-left-radius: 6px;
       
 
         .current-user {
-            height: 200px;//stay the same
+            height: 250px;//stay the same
             background: #A7BFBC;
+            border-top-left-radius: 6px;
+            border-top-right-radius: 6px;
 
         }
 
@@ -84,8 +87,10 @@ body {
         }
 
         .user-list {
-            height: 340px;//stay the same
+            height: 242px;//stay the same
             background: #9CA8A6;
+            border-bottom-left-radius: 6px;
+            border-bottom-right-radius: 6px;
         }
     }
 
@@ -93,12 +98,14 @@ body {
         height: 500px;
         background: rgb(90, 97, 95);
         border-top: 8px solid rgb(90, 97, 95);
+        border-top-right-radius: 6px;
 
         .message-list {
-            height: 500px; //stay the same
+            height: 492px; //stay the same
             background: #F7F7FA;
             overflow-y: scroll; 
             overflow-x: hidden; 
+            border-radius: 6px;
         }
 
         
@@ -111,9 +118,13 @@ body {
     .input-section {
         background: rgb(90, 97, 95);
         border-bottom: 8px solid rgb(90, 97, 95);
+        border-bottom-right-radius: 6px;
+        border-bottom-left-radius: 6px;
         .input-area {
             height: 60px; //stay the same
             background: rgb(72, 79, 78);
+            border-bottom-right-radius: 6px;
+            border-bottom-left-radius: 6px;
         }
     }  
 
