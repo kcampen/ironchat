@@ -41,6 +41,7 @@ messages.fetch({
     success: function() {
         messages.each(function(message){
          new ListView({model: message});
+         $('.message-list').scrollTop(5000000000);
         })
     },
 
