@@ -51,11 +51,14 @@ $('.send-msg-btn').click(function(){
 
 messages.fetch({
 	success: function(){
-		messages.comparator()
-		messages.each(function(){
+		messages.each(function(message){
 			new ListView({model: message});
 		})
-	}
+	},
+
+      error: function() {
+        console.log('fetch failed!');
+      }
 })
 
 	
